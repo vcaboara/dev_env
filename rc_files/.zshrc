@@ -16,6 +16,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
+
 # Don't overwrite, append!
 setopt APPEND_HISTORY
 setopt extended_glob
@@ -24,17 +25,14 @@ setopt automenu
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-# XXX pcre?
+# pcre: Perl Compatible Regular Expressions
 zmodload zsh/pcre
 autoload zmv
 autoload pcre
+# XXX ?
 alias mmv='noglob zmv -W'
 
-export EDITOR=vim
-
 export PATH=$PATH\:$HOME\/bin:
-
-alias sl=ls
 
 # persisting login environment cruft
 runscreen () {
@@ -154,15 +152,3 @@ PROMPT="
 ${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 [${fg_green}%T${fg_white}]:${at_normal}"
 
-#Aliases
-###ls, the common ones I use a lot shortened for rapid fire usage
-alias ls='ls --color' #I like color
-alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias '..'='cd ..'
-alias '...'='cd ../..'
-alias '....'='cd ../../..'
-alias '.....'='cd ../../../..'
-#alias -g wf='...'
