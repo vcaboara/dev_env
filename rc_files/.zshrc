@@ -13,6 +13,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
+export EDITOR=vim
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
@@ -152,3 +153,45 @@ PROMPT="
 ${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 [${fg_green}%T${fg_white}]:${at_normal}"
 
+
+#Aliases
+alias reload="source ~/.zshrc"
+
+# Convenience
+alias du='du -sh '
+alias df='df --si '
+
+alias sudoj='sudo -u jenkins '
+alias restartj='sudo service jenkins restart'
+alias stopj='sudo service jenkins stop'
+
+###ls, the common ones I use a lot shortened for rapid fire usage
+alias sl=ls
+alias ls='ls --color' #I like color
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias ll='ls -laFh'   #long list,show all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
+alias '.....'='cd ../../../..'
+#alias -g wf='...'
+
+# Git aliases
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit '
+alias gd='git diff '
+alias go='git checkout '
+alias gr='git reset '
+alias gp='git pull '
+alias gP='git push'
+alias gh='git hist '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+
+alias got='git '
+alias get='git '
