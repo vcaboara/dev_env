@@ -15,8 +15,8 @@ compinit
 # Lines configured by zsh-newuser-install
 export EDITOR=vim
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=15000
+SAVEHIST=15000
 
 # Don't overwrite, append!
 setopt APPEND_HISTORY
@@ -33,7 +33,10 @@ autoload pcre
 # XXX ?
 alias mmv='noglob zmv -W'
 
-export PATH=$PATH\:$HOME\/bin:
+export PATH=$PATH:$HOME/bin
+export ANDROID_HOME=$HOME/android-sdk-linux
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$HOME/.npm-packages/bin
 
 # persisting login environment cruft
 runscreen () {
@@ -153,6 +156,7 @@ PROMPT="
 ${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 [${fg_green}%T${fg_white}]:${at_normal}"
 
+force_color_prompt=yes
 
 #Aliases
 alias reload="source ~/.zshrc"
@@ -164,6 +168,14 @@ alias df='df --si '
 alias sudoj='sudo -u jenkins '
 alias restartj='sudo service jenkins restart'
 alias stopj='sudo service jenkins stop'
+
+alias gta='cp ~/git/playmakertabletandroid/gradleTemplates/apps/build.gradle .'
+alias gtad='cp ~/git/playmakertabletandroid/gradleTemplates/apps/dependsOnChildren/build.gradle .'
+alias gtl='cp ~/git/playmakertabletandroid/gradleTemplates/libs/build.gradle .'
+
+alias play='cd ~/git/playmakertabletandroid'
+alias auto='cd ~/git/automation'
+alias apkinfo='~/android-sdk-linux/build-tools/19.1.0/aapt dump badging '
 
 ###ls, the common ones I use a lot shortened for rapid fire usage
 alias sl=ls

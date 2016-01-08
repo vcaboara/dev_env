@@ -49,3 +49,4 @@ endfunc
 " Viminfo; override how many lines of yanks to keep from default
 set viminfo='20,"1000,h
 set colorcolumn=80
+execute pathogen#infect()
