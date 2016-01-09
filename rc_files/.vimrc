@@ -22,7 +22,7 @@ set number
 
 set mouse=a                     "enable mouse
 
-" Indenting, and style related
+"" Indenting, and style related
 set shiftwidth=4
 set softtabstop=4
 syntax enable
@@ -30,7 +30,7 @@ set background=dark
 set autoindent
 set cindent
 
-" Paste Mode On/Off 
+"" Paste Mode On/Off 
 map <F2> :call Paste_on_off()<CR> 
 set pastetoggle=<F2> 
 
@@ -46,6 +46,7 @@ func! Paste_on_off()
         endif   
         return 
 endfunc 
-" Viminfo; override how many lines of yanks to keep from default
+"" Viminfo; override how many lines of yanks to keep from default
 set viminfo='20,"1000,h
 set colorcolumn=80
+execute pathogen#infect()
