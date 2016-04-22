@@ -15,8 +15,8 @@ compinit
 # Lines configured by zsh-newuser-install
 export EDITOR=vim
 HISTFILE=~/.histfile
-HISTSIZE=15000
-SAVEHIST=15000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Don't overwrite, append!
 setopt APPEND_HISTORY
@@ -34,9 +34,6 @@ autoload pcre
 alias mmv='noglob zmv -W'
 
 export PATH=$PATH:$HOME/bin
-export ANDROID_HOME=$HOME/android-sdk-linux
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$HOME/.npm-packages/bin
 
 # persisting login environment cruft
 runscreen () {
@@ -50,12 +47,6 @@ screen -d -R
 }
 
 alias screen=runscreen
-
-#if [ ".$TERM" = ".screen" ] ; then
-#    periodic () { source ~/.periodicrc }
-#
-#    PERIOD=35
-#fi
 
 case $TERM in
     screen*)
@@ -158,24 +149,21 @@ ${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 
 force_color_prompt=yes
 
-#Aliases
-alias reload="source ~/.zshrc"
-
 # Convenience
 alias du='du -sh '
 alias df='df --si '
+alias tre='tree '
+alias dk='docker '
+alias dki='docker images '
+alias dc='docker-compose '
 
 alias sudoj='sudo -u jenkins '
 alias restartj='sudo service jenkins restart'
 alias stopj='sudo service jenkins stop'
 
-alias gta='cp ~/git/playmakertabletandroid/gradleTemplates/apps/build.gradle .'
-alias gtad='cp ~/git/playmakertabletandroid/gradleTemplates/apps/dependsOnChildren/build.gradle .'
-alias gtl='cp ~/git/playmakertabletandroid/gradleTemplates/libs/build.gradle .'
-
-alias play='cd ~/git/playmakertabletandroid'
-alias auto='cd ~/git/automation'
-alias apkinfo='~/android-sdk-linux/build-tools/19.1.0/aapt dump badging '
+alias gbcp='gradle clean build --continue --parallel'
+alias gwb='./gradlew clean build --continue --parallel'
+alias wrap='gradle wrapper --gradle-version 2.9'
 
 ###ls, the common ones I use a lot shortened for rapid fire usage
 alias sl=ls
@@ -199,8 +187,10 @@ alias gc='git commit '
 alias gd='git diff '
 alias go='git checkout '
 alias gr='git reset '
+alias grb='git rebase '
 alias gp='git pull '
 alias gP='git push'
+alias gPgh='git push'
 alias gh='git hist '
 alias gk='gitk --all&'
 alias gx='gitx --all'
