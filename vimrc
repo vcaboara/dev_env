@@ -25,6 +25,7 @@ Plugin 'kien/ctrlp.vim'                     " Super Searching
 Plugin 'tpope/vim-fugitive'                 " Git Integration
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
 Plugin 'vim-airline/vim-airline'	    " status/tabline
+Plugin 'easymotion/vim-easymotion'	    " Vim motions
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
@@ -54,27 +55,20 @@ set foldlevel=99
 nnoremap <space> za
 
 " PEP8 indentation
-"" au BufNewFile,BufRead *.py
-""    \ set tabstop=4
-""    \ set softtabstop=4
-""    \ set shiftwidth=4
-""    \ set textwidth=79
-""    \ set expandtab
-""    \ set autoindent
-""    \ set fileformat=unix
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 | set softtabstop=4 | set shiftwidth=4 |
+    \ set textwidth=79 | set expandtab | set autoindent | set fileformat=unix
 
 " Web indentation
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 " Additional SimpylFold config
 let g:SimpylFold_docstring_preview=1
 
 " Additional YouCompleteMe config
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
 py << EOF
@@ -133,3 +127,5 @@ func! Paste_on_off()
         endif   
         return 
 endfunc 
+
+set clipboard=unnamed
