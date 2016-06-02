@@ -34,6 +34,9 @@ autoload pcre
 alias mmv='noglob zmv -W'
 
 export PATH=$PATH:$HOME/bin
+export ANDROID_HOME=~/android-sdk-linux/
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export JENKINS_HOME=/var/lib/jenkins/
 
 # persisting login environment cruft
 runscreen () {
@@ -149,12 +152,22 @@ ${fg_lgreen}%n@${at_underl}%m${at_underloff}${fg_white}[${fg_cyan}%~${fg_white}]
 
 force_color_prompt=yes
 
+# Aliases
+alias reload="source ~/.zshrc && source ~/.workalias"
+
 # Convenience
 alias du='du -sh '
 alias df='df --si '
 alias tre='tree '
+
 alias dk='docker '
 alias dki='docker images '
+alias dkia='docker images -a '
+alias dkcleanrun='docker ps -aq | xargs --no-run-if-empty docker rm -f'
+alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
+	-v /var/lib/docker:/var/lib/docker \
+	--privileged dockerinpractice/docker-cleanup-volumes'
+
 alias dc='docker-compose '
 
 alias sudoj='sudo -u jenkins '
@@ -177,6 +190,7 @@ alias '..'='cd ..'
 alias '...'='cd ../..'
 alias '....'='cd ../../..'
 alias '.....'='cd ../../../..'
+alias iotop='sudo iotop '
 #alias -g wf='...'
 
 # Git aliases
@@ -190,7 +204,6 @@ alias gr='git reset '
 alias grb='git rebase '
 alias gp='git pull '
 alias gP='git push'
-alias gPgh='git push'
 alias gh='git hist '
 alias gk='gitk --all&'
 alias gx='gitx --all'
