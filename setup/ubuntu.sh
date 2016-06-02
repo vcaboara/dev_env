@@ -1,6 +1,6 @@
 #!/bin/sh
 APPS_LIST="vim zsh screen git openssh-server python-pip build-essential cmake \
-	python-dev"
+	python-dev exfat-fuse exfat-utils iotop"
 PYTHON_MODULES="argparse"
 
 # Update your local package index:
