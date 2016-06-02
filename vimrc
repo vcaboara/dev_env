@@ -63,6 +63,15 @@ au BufNewFile,BufRead *.py
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
+" YAML indentation
+au BufNewFile,BufRead *.yml
+    \ set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+
+" Groovy
+au BufNewFile,BufRead Jenkinsfile
+    \ set tabstop=4 | set softtabstop=4 | set shiftwidth=4 | set syntax=groovy |
+    \ set expandtab | set autoindent | set fileformat=unix
+
 " Additional SimpylFold config
 let g:SimpylFold_docstring_preview=1
 
