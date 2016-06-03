@@ -169,6 +169,7 @@ alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
 	--privileged dockerinpractice/docker-cleanup-volumes'
 
 alias dc='docker-compose '
+alias dm='docker-machine '
 
 alias sudoj='sudo -u jenkins '
 alias restartj='sudo service jenkins restart'
