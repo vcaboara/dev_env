@@ -16,7 +16,7 @@ Plugin 'tmhedberg/SimpylFold'               " Code Folding
 Plugin 'vim-scripts/indentpython.vim'       " Auto-Indentation
 Plugin 'scrooloose/syntastic'               " Syntax Checking/Highlighting
 Plugin 'nvie/vim-flake8'                    " PEP8 Checking
-Plugin 'Valloric/YouCompleteMe'             " Auto-Complete
+"" Plugin 'Valloric/YouCompleteMe'             " Auto-Complete
 Plugin 'jnurmine/Zenburn'                   " Color Schemes
 Plugin 'altercation/vim-colors-solarized'   " ... addtl scheme
 Plugin 'scrooloose/nerdtree'                " File Tree
@@ -80,14 +80,14 @@ let g:SimpylFold_docstring_preview=1
 " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " Pretty code
 let python_highlight_all=1

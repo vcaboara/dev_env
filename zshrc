@@ -170,6 +170,8 @@ alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
 
 alias dc='docker-compose '
 alias dm='docker-machine '
+alias dmls='docker-machine ls'
+alias dmload='eval $(dm env)'
 
 alias sudoj='sudo -u jenkins '
 alias restartj='sudo service jenkins restart'

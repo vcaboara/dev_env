@@ -2,7 +2,7 @@
 APPS_LIST="vim zsh screen workrave \
 	git openssh-server python-pip build-essential cmake \
 	python-dev exfat-fuse exfat-utils iotop apt-transport-https \
-	ca-certificates"
+	ca-certificates virtualbox"
 PYTHON_MODULES="argparse"
 
 apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
