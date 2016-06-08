@@ -23,7 +23,7 @@ Plugin 'scrooloose/nerdtree'                " File Tree
 Plugin 'jistr/vim-nerdtree-tabs'            " Tabs
 Plugin 'kien/ctrlp.vim'                     " Super Searching
 Plugin 'tpope/vim-fugitive'                 " Git Integration
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
+"" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
 Plugin 'vim-airline/vim-airline'	    " status/tabline
 Plugin 'easymotion/vim-easymotion'	    " Vim motions
 

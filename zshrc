@@ -181,21 +181,6 @@ alias gbcp='gradle clean build --continue --parallel'
 alias gwb='./gradlew clean build --continue --parallel'
 alias wrap='gradle wrapper --gradle-version 2.9'
 
-###ls, the common ones I use a lot shortened for rapid fire usage
-alias sl=ls
-alias ls='ls --color' #I like color
-alias l='ls -lFh'     #size,show type,human readable
-alias la='ls -lAFh'   #long list,show almost all,show type,human readable
-alias ll='ls -laFh'   #long list,show all,show type,human readable
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias '..'='cd ..'
-alias '...'='cd ../..'
-alias '....'='cd ../../..'
-alias '.....'='cd ../../../..'
-alias iotop='sudo iotop '
-#alias -g wf='...'
-
 # Git aliases
 alias gs='git status '
 alias ga='git add '
@@ -213,3 +198,18 @@ alias gx='gitx --all'
 
 alias got='git '
 alias get='git '
+
+###ls, the common ones I use a lot shortened for rapid fire usage
+alias sl=ls
+alias ls='ls --color' #I like color
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias ll='ls -laFh'   #long list,show all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
+alias '.....'='cd ../../../..'
+alias iotop='sudo iotop '
+#alias -g wf='...'
