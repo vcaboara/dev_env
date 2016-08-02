@@ -163,12 +163,23 @@ alias tre='tree '
 alias dk='docker '
 alias dki='docker images '
 alias dkia='docker images -a '
+alias dkv='docker volume '
+alias dkvl='docker volume ls'
 alias dkcleanrun='docker ps -aq | xargs --no-run-if-empty docker rm -f'
 alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
 	-v /var/lib/docker:/var/lib/docker \
 	--privileged dockerinpractice/docker-cleanup-volumes'
+alias dkrmvols='dkv rm $(docker volume ls -q)'
 
 alias dc='docker-compose '
+alias dcu='dc up '
+alias dcub='dc up --build '
+alias dcud='dcu -d '
+alias dcudb='dcud --build '
+alias dcubd='dcudb '
+alias dcd='dc down '
+alias dcdv='dcd -v '
+
 alias dm='docker-machine '
 alias dmls='docker-machine ls'
 alias dmload='eval $(dm env)'
