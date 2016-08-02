@@ -13,7 +13,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
-export EDITOR=vim
+export EDITOR=nvim
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
