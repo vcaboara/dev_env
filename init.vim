@@ -33,14 +33,14 @@ set pastetoggle=<F2>
 let paste_mode = 0 " 0 = normal, 1 = paste
 
 func! Paste_on_off()
-        if g:paste_mode == 0
-                set paste
-                let g:paste_mode = 1
-        else
-                set nopaste
-                let g:paste_mode = 0
-        endif
-        return
+    if g:paste_mode == 0
+        set paste
+        let g:paste_mode = 1
+    else
+        set nopaste
+        let g:paste_mode = 0
+    endif
+    return
 endfunc
 
 " Enable folding with the spacebar
