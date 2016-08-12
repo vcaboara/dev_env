@@ -7,6 +7,8 @@ Plug 'scrooloose/syntastic'               " Syntax Checking/Highlighting
 Plug 'nvie/vim-flake8'                    " PEP8 Checking
 Plug 'tpope/vim-fugitive'                 " Git Integration
 Plug 'tpope/vim-vinegar'                  " Project Drawer
+Plug 'vim-airline/vim-airline'            " Status/tabline
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Ctrl-P functionality from fzf
@@ -22,6 +24,24 @@ set colorcolumn=80	    " Highlight column 80
 colors slate
 " Mouse
 set mouse=a
+" Viminfo; override how many lines of yanks to keep from default
+set viminfo='20,"1000,h
+" Paste Mode On/Off
+map <F2> :call Paste_on_off()<CR>
+set pastetoggle=<F2>
+
+let paste_mode = 0 " 0 = normal, 1 = paste
+
+func! Paste_on_off()
+        if g:paste_mode == 0
+                set paste
+                let g:paste_mode = 1
+        else
+                set nopaste
+                let g:paste_mode = 0
+        endif
+        return
+endfunc
 
 " Enable folding with the spacebar
 nnoremap <space> za
