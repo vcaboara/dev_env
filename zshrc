@@ -182,7 +182,6 @@ alias dcdv='dcd -v '
 
 alias dm='docker-machine '
 alias dmls='docker-machine ls'
-alias dmload='eval $(dm env)'
 
 alias sudoj='sudo -u jenkins '
 alias restartj='sudo service jenkins restart'
@@ -224,3 +223,5 @@ alias '....'='cd ../../..'
 alias '.....'='cd ../../../..'
 alias iotop='sudo iotop '
 #alias -g wf='...'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
