@@ -8,7 +8,8 @@ Plug 'nvie/vim-flake8'                    " PEP8 Checking
 Plug 'tpope/vim-fugitive'                 " Git Integration
 Plug 'tpope/vim-vinegar'                  " Project Drawer
 Plug 'vim-airline/vim-airline'            " Status/tabline
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'     " 
+Plug 'derekwyatt/vim-scala'               " Scala syntax highlighting
 call plug#end()
 
 " Ctrl-P functionality from fzf
