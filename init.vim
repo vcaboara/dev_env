@@ -10,6 +10,7 @@ Plug 'tpope/vim-vinegar'                  " Project Drawer
 Plug 'vim-airline/vim-airline'            " Status/tabline
 Plug 'vim-airline/vim-airline-themes'     " 
 Plug 'derekwyatt/vim-scala'               " Scala syntax highlighting
+Plug 'Valloric/YouCompleteMe'             " Code completion
 call plug#end()
 
 " Ctrl-P functionality from fzf
