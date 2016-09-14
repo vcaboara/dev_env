@@ -1,5 +1,5 @@
 #!/bin/sh
-APPS_LIST="epel-release screen git openssh-server python-pip iotop docker"
+APPS_LIST="epel-release xauth screen git openssh-server python-pip iotop docker"
 
 PYTHON_MODULES="argparse"
 
