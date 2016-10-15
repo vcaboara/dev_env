@@ -172,6 +172,7 @@ alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
 	--privileged dockerinpractice/docker-cleanup-volumes'
 alias dkrmvols='dkv rm $(docker volume ls -q)'
 alias dkrmidang='dk rmi $(dki -q -f "dangling=true")'
+alias dkrma='dk rm $(dk ps -aq)'
 
 alias dc='docker-compose '
 alias dcu='dc up '
