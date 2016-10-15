@@ -155,6 +155,7 @@ force_color_prompt=yes
 # Aliases
 alias reload="source ~/.zshrc && source ~/.workalias"
 
+alias sshbt="ssh -p 59122 "
 # Convenience
 alias du='du -sh '
 alias df='df --si '
@@ -170,6 +171,7 @@ alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
 	-v /var/lib/docker:/var/lib/docker \
 	--privileged dockerinpractice/docker-cleanup-volumes'
 alias dkrmvols='dkv rm $(docker volume ls -q)'
+alias dkrmidang='dk rmi $(dki -q -f "dangling=true")'
 
 alias dc='docker-compose '
 alias dcu='dc up '
