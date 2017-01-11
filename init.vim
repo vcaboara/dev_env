@@ -1,15 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-github-dashboard'	  " Browse GitHub events
 Plug 'tmhedberg/SimpylFold'               " Code Folding
 Plug 'vim-scripts/indentpython.vim'       " Auto-Indentation
 Plug 'scrooloose/syntastic'               " Syntax Checking/Highlighting
 Plug 'nvie/vim-flake8'                    " PEP8 Checking
 Plug 'tpope/vim-fugitive'                 " Git Integration
 Plug 'tpope/vim-vinegar'                  " Project Drawer
+Plug 'valloric/youcompleteme'		  " Code-completion
 Plug 'vim-airline/vim-airline'            " Status/tabline
 Plug 'vim-airline/vim-airline-themes'     " 
-Plug 'derekwyatt/vim-scala'               " Scala syntax highlighting
 call plug#end()
 
 " Ctrl-P functionality from fzf
