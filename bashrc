@@ -186,4 +186,7 @@ alias gx='gitx --all '
 alias got='git '
 alias get='git '
 
+# Clear memory cache
+alias clearcache='(sync && echo 3 | sudo tee /proc/sys/vm/drop_caches)'
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
