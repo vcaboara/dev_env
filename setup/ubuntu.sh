@@ -1,10 +1,13 @@
 #!/bin/sh
-APPS_LIST="neovim screen workrave chromium-browser \
-	git openssh-server python-pip build-essential cmake \
-	python-dev exfat-fuse exfat-utils iotop apt-transport-https \
-	ca-certificates virtualbox docker-engine"
+APPS_LIST="vim neovim screen workrave chromium-browser git openssh-server \
+	python-pip build-essential cmake python-dev exfat-fuse curl \
+	exfat-utils iotop htop apt-transport-https ca-certificates docker-ce"
 
 PYTHON_MODULES="argparse"
+
+# TODO: Install handbrake, makemkv, privaite internet access,
+# TODO: Setup bashrc|bash_profile (macOS uses _profile)
+# TODO: Setup .vimrc (neovim)
 
 # add neovim ppa
 add-apt-repository -y ppa:neovim-ppa/unstable
@@ -21,5 +24,5 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+#git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+#~/.fzf/install
