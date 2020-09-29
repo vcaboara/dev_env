@@ -26,8 +26,11 @@ Plugin 'tpope/vim-fugitive'                 " Git Integration
 "" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
 Plugin 'vim-airline/vim-airline'	    " status/tabline
 Plugin 'easymotion/vim-easymotion'	    " Vim motions
-Plug 'ekalinin/Dockerfile.vim'		  " Dockerfile syntax
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go Integration
+Plugin 'davidhalter/jedi-vim'           " awesome Python autocompletion with VIM
+Plugin 'klen/python-mode'
+Plugin 'dracula/vim'                    " A dark theme for Vim.
+Plugin 'ekalinin/Dockerfile.vim'		  " Dockerfile syntax
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go Integration
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
