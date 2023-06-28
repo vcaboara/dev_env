@@ -1,4 +1,5 @@
-call plug#begin('~/.config/nvim/plugged')
+" vimrc file using vim-plug
+call plug#begin("~/.config/nvim/autoload/plug.vim")
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-github-dashboard'      " Browse GitHub events

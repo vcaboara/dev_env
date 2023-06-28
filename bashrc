@@ -85,7 +85,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -127,48 +127,50 @@ alias du='du -sh '
 alias df='df --si '
 alias tre='tree '
 
-alias sl=ls
+alias sl='ls'
 alias ls='ls --color' # color
 alias l='ls -lFh'     # size,show type,human readable
 alias la='ls -lAFh'   # long list,show almost all,show type,human readable
 alias ll='ls -laFh'   # long list,show all,show type,human readable
 alias lr='ls -tRFh'   # sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'   # long list,sorted by date,show type,human readable
+
+# Go up 1, 2, 3, or 4 directories
 alias '..'='cd ..'
 alias '...'='cd ../..'
 alias '....'='cd ../../..'
 alias '.....'='cd ../../../..'
+
+# Elevated
 alias iotop='sudo iotop '
-#alias -g wf='...'
+alias htop='sudo htop '
 
-# Docker/-compose/-machine
-alias dk='docker '
+# Shorter make
+alias mk='make'
+# Typo
+alias km='make'
+
+# Docker
+alias dk='docker'
 alias dki='docker images '
-alias dkia='docker images -a '
-alias dkv='docker volume '
-alias dkvl='docker volume ls'
-alias dkcleanrun='docker ps -aq | xargs --no-run-if-empty docker rm -f'
-alias dkcleanvol='docker run -v /var/run/docker.sock:/var/run/docker.sock \
-	-v /var/lib/docker:/var/lib/docker \
-	--privileged dockerinpractice/docker-cleanup-volumes'
-alias dkrmvols='dkv rm $(docker volume ls -q)'
+alias dkv='docker volume'
+alias dksp='docker system prune'
+alias dkspf='docker system prune -f'
+alias dkvp='docker volume prune'
+alias dkvpf='docker volume prune -f'
 alias dkrma='dk rm $(dk ps -aq)'
-alias dkrmidang='dk rmi $(dki -q -f "dangling=true")'
 
-alias dc='docker-compose '
-alias dcu='dc up '
-alias dcub='dc up --build '
-alias dcud='dcu -d '
-alias dcudb='dcud --build '
-alias dcubd='dcudb '
+# Docker Compose
+alias dc='docker-compose'
+alias dcu='docker-compose up '
+alias dcub='docker-compose up --build '
+alias dcud='docker-compose -d '
+alias dcudb='docker-compose --build '
 alias dcd='dc down '
 alias dcdv='dcd -v '
 
-alias dm='docker-machine '
-alias dmls='docker-machine ls'
-alias dmload='eval $(dm env)'
-
 # Git aliases
+alias g='git'
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -183,8 +185,12 @@ alias gh='git hist '
 alias gk='gitk --all& '
 alias gx='gitx --all '
 
-alias got='git '
-alias get='git '
+# Typos
+alias got='git'
+alias get='git'
+
+# Reload this file
+alias reload='source ~/.bashrc'
 
 # Clear memory cache
 alias clearcache='(sync && echo 3 | sudo tee /proc/sys/vm/drop_caches)'

@@ -16,6 +16,8 @@ Plugin 'tmhedberg/SimpylFold'               " Code Folding
 Plugin 'vim-scripts/indentpython.vim'       " Auto-Indentation
 Plugin 'scrooloose/syntastic'               " Syntax Checking/Highlighting
 Plugin 'nvie/vim-flake8'                    " PEP8 Checking
+
+"" TODO: test
 "" Plugin 'Valloric/YouCompleteMe'             " Auto-Complete
 Plugin 'jnurmine/Zenburn'                   " Color Schemes
 Plugin 'altercation/vim-colors-solarized'   " ... addtl scheme
