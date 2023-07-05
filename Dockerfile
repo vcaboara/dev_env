@@ -7,13 +7,8 @@ RUN apt-get update && \
         neovim git zsh screen tmux less htop iotop curl
 
 ENV SCRATCH_HOME=/home/scratch
-ENV PLUG_PATH="$SCRATCH_HOME/.config/nvim/autoload/plug.vim"
 
 RUN useradd -d "$SCRATCH_HOME" -u 999 -m -s /bin/zsh scratch && \
-        # TODO: test
-        # Install vim-plugin
-        curl -fLo "$PLUG_PATH" \
-        --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
         # Install fzf
         git clone --depth 1 https://github.com/junegunn/fzf.git "$SCRATCH_HOME/.fzf" && \
         "$SCRATCH_HOME/.fzf/install" && \
