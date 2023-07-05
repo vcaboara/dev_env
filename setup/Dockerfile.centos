@@ -1,6 +1,0 @@
-FROM centos:centos7
-
-COPY centos.sh .
-
-RUN chmod +x centos.sh
-RUN ./centos.sh
