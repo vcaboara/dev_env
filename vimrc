@@ -21,7 +21,8 @@ Plugin 'nvie/vim-flake8'                    " PEP8 Checking
 "" Plugin 'Valloric/YouCompleteMe'             " Auto-Complete
 Plugin 'jnurmine/Zenburn'                   " Color Schemes
 Plugin 'altercation/vim-colors-solarized'   " ... addtl scheme
-Plugin 'scrooloose/nerdtree'                " File Tree
+"Plugin 'scrooloose/nerdtree'                " File Tree
+Plugin 'preservim/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'            " Tabs
 Plugin 'kien/ctrlp.vim'                     " Super Searching
 Plugin 'tpope/vim-fugitive'                 " Git Integration

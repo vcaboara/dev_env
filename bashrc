@@ -119,6 +119,8 @@ fi
 export EDITOR=nvim
 
 export PATH=$PATH:$HOME/bin
+export HOST_UID=$(id -u)
+export HOST_GID=$(id -g)
 
 force_color_prompt=yes
 
@@ -165,9 +167,11 @@ alias dc='docker-compose'
 alias dcu='docker-compose up '
 alias dcub='docker-compose up --build '
 alias dcud='docker-compose -d '
-alias dcudb='docker-compose --build '
-alias dcd='dc down '
-alias dcdv='dcd -v '
+alias dcb='docker-compose --build '
+alias dcc='docker-compose config '
+alias dcr='docker-compose run '
+alias dcd='docker-compose down '
+alias dcdv='docker-compose down -v '
 
 # Git aliases
 alias g='git'
@@ -175,13 +179,20 @@ alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
 alias gc='git commit '
+# Windows alias, support both
+alias gic='git commit '
 alias gd='git diff '
 alias go='git checkout '
 alias gr='git reset '
+alias grs='git reset --staged '
 alias grb='git rebase '
 alias gp='git pull '
 alias gP='git push'
+# Windows alias, support both
+alias gpu='git push '
 alias gh='git hist '
+alias gl='git log '
+
 alias gk='gitk --all& '
 alias gx='gitx --all '
 
@@ -196,3 +207,4 @@ alias reload='source ~/.bashrc'
 alias clearcache='(sync && echo 3 | sudo tee /proc/sys/vm/drop_caches)'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+

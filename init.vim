@@ -13,8 +13,12 @@ Plug 'tpope/vim-vinegar'                  " Project Drawer
 Plug 'valloric/youcompleteme'             " Code-completion
 Plug 'vim-airline/vim-airline'            " Status/tabline
 Plug 'vim-airline/vim-airline-themes'     " 
+Plug 'preservim/nerdtree'
 call plug#end()
 
+"autocmd VimEnter * if !argc() | NERDTree | endif
+" NERDTree
+" nnoremap <C-n> :NERDTreeToggle<CR>
 " Ctrl-P functionality from fzf
 nnoremap <C-p> :FZF<CR>
 " Additional SimpylFold config
