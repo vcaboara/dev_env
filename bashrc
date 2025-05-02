@@ -148,14 +148,14 @@ alias iotop='sudo iotop '
 alias htop='sudo htop '
 
 # Shorter make
-alias mk='make'
+alias mk='make '
 # Typo
-alias km='make'
+alias km='make '
 
 # Docker
-alias dk='docker'
+alias dk='docker '
 alias dki='docker images '
-alias dkv='docker volume'
+alias dkv='docker volume '
 alias dksp='docker system prune'
 alias dkspf='docker system prune -f'
 alias dkvp='docker volume prune'
@@ -166,12 +166,14 @@ alias dkrma='dk rm $(dk ps -aq)'
 alias dc='docker-compose'
 alias dcu='docker-compose up '
 alias dcub='docker-compose up --build '
-alias dcud='docker-compose -d '
-alias dcb='docker-compose --build '
+alias dcud='docker-compose up -d '
+alias dcb='docker-compose build '
 alias dcc='docker-compose config '
 alias dcr='docker-compose run '
+alias dcre='docker-compose run --entrypoint '
 alias dcd='docker-compose down '
 alias dcdv='docker-compose down -v '
+alias dcl='docker-compose logs '
 
 # Git aliases
 alias g='git'
@@ -183,8 +185,8 @@ alias gc='git commit '
 alias gic='git commit '
 alias gd='git diff '
 alias go='git checkout '
-alias gr='git reset '
-alias grs='git reset --staged '
+alias gr='git restore '
+alias grs='git restore --staged '
 alias grb='git rebase '
 alias gp='git pull '
 alias gP='git push'
@@ -200,6 +202,9 @@ alias gx='gitx --all '
 alias got='git'
 alias get='git'
 
+# Using python cli modules
+alias pympi='python -m pip install '
+
 # Reload this file
 alias reload='source ~/.bashrc'
 
@@ -207,4 +212,3 @@ alias reload='source ~/.bashrc'
 alias clearcache='(sync && echo 3 | sudo tee /proc/sys/vm/drop_caches)'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-

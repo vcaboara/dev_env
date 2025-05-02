@@ -1,60 +1,125 @@
-set nocompatible              " required
-filetype off                  " required
+" --- Basic Vim Configuration ---
+set nocompatible              " This must be the first line
+filetype plugin indent on     " Required for vim-plug and many plugins
+syntax enable                 " Enable syntax highlighting
 
-"" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Set leader key (optional, but common)
+let mapleader = " "
+let maplocalleader = " "
 
-"" alternatively, pass a path where Vundle should install plugins
-""call vundle#begin('~/some/path/here')
+" --- vim-plug Setup ---
+" Specify the directory for plugins (standard for Vim)
+call plug#begin('~/.vim/plugged')
 
-"" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" --- Plugin List (Vim Compatible) ---
+" Only include plugins that work with Vim
 
-"" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-Plugin 'tmhedberg/SimpylFold'               " Code Folding
-Plugin 'vim-scripts/indentpython.vim'       " Auto-Indentation
-Plugin 'scrooloose/syntastic'               " Syntax Checking/Highlighting
-Plugin 'nvie/vim-flake8'                    " PEP8 Checking
+" YouCompleteMe (See IMPORTANT note below!)
+" Plug 'valloric/YouCompleteMe', { 'do': './install.py' }
 
-"" TODO: test
-"" Plugin 'Valloric/YouCompleteMe'             " Auto-Complete
-Plugin 'jnurmine/Zenburn'                   " Color Schemes
-Plugin 'altercation/vim-colors-solarized'   " ... addtl scheme
-"Plugin 'scrooloose/nerdtree'                " File Tree
-Plugin 'preservim/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'            " Tabs
-Plugin 'kien/ctrlp.vim'                     " Super Searching
-Plugin 'tpope/vim-fugitive'                 " Git Integration
-"" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
-Plugin 'vim-airline/vim-airline'	    " status/tabline
-Plugin 'easymotion/vim-easymotion'	    " Vim motions
-Plugin 'davidhalter/jedi-vim'           " awesome Python autocompletion with VIM
-Plugin 'klen/python-mode'
-Plugin 'dracula/vim'                    " A dark theme for Vim.
-Plugin 'ekalinin/Dockerfile.vim'		  " Dockerfile syntax
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go Integration
+Plug 'tmhedberg/SimpylFold'               " Code Folding
+Plug 'vim-scripts/indentpython.vim'       " Auto-Indentation
+Plug 'scrooloose/syntastic'               " Syntax Checking/Highlighting
+Plug 'nvie/vim-flake8'                    " PEP8 Checking
 
-" All of your Plugins must be added before the following line
-call vundle#end()           " required
-filetype plugin indent on   " required
+Plug 'jnurmine/Zenburn'                   " Color Schemes
+Plug 'altercation/vim-colors-solarized'   " ... addtl scheme
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'            " Tabs
+Plug 'kien/ctrlp.vim'                     " Super Searching
+Plug 'tpope/vim-fugitive'                 " Git Integration
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'} " Status Bar
+Plug 'vim-airline/vim-airline'	    " status/tabline
+Plug 'easymotion/vim-easymotion'	    " Vim motions
+"Plugin 'davidhalter/jedi-vim'           " awesome Python autocompletion with VIM
+"Plugin 'klen/python-mode'
+Plug 'dracula/vim'                    	" A dark theme for Vim.
+Plug 'ekalinin/Dockerfile.vim'		" Dockerfile syntax
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  " Go Integration
+
+Plug 'honza/vim-snippets'		" Snippets for UltiSnips
+Plug 'jiangmiao/auto-pairs'     " Autoclose pairs
+Plug 'SirVer/ultisnips' 		" Snippet Engine
+Plug 'easymotion/vim-easymotion' 	" Motion plugin
+
+call plug#end()
+
+" --- Plugin Configuration (Vimscript Only) ---
+
+" --- auto-pairs Configuration ---
+" Most options are enabled by default, providing automatic pairing of (), [], {}, etc.
+" You can customize behavior here if needed.
+" To disable auto-pairing on backspace:
+" let g:AutoPairsMapBS = 0
+" To change the key for jumping out of pairs (default is <C-e> or <CR>):
+" let g:AutoPairsShortcutJump = '<M-j>' " Example: Alt+j
+" To disable auto-pairing in specific filetypes:
+" let g:AutoPairs_disable_filetypes = ['markdown', 'tex']
+" --- End auto-pairs Configuration ---
+
+" --- UltiSnips Configuration ---
+" Set the trigger key for expanding snippets. <tab> is common.
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" Set the trigger key for jumping between snippet placeholders. <tab> is common.
+let g:UltiSnipsJumpTrigger="<tab>"
+
+" Optional: Make UltiSnips work with visual selections (e.g., wrapping selected text)
+" let g:UltiSnipsEnableVisualSelections = 1
+
+" Optional: Define additional directories where UltiSnips looks for snippet files
+" let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.config/nvim/UltiSnips']
+
+" Important: If using with nvim-cmp, ensure your nvim-cmp setup handles <tab>
+" appropriately for both completion and snippet expansion.
+" --- End UltiSnips Configuration ---
+
+" --- vim-easymotion Configuration ---
+" Set the leader key for EasyMotion motions. Defaults to <leader><leader>.
+let g:EasyMotion_leader_key = '<leader><leader>'
+
+" Highlight targets (recommended)
+let g:EasyMotion_do_mapping = 1
+let g:EasyMotion_ForceMotion = 1 " Jump immediately after typing the label
+
+" Optional: Use regular expressions for more flexible targeting
+" let g:EasyMotion_use_regexp = 1
+
+" Example Mappings:
+" Use <leader><leader>s{char} to find occurrences of {char}
+map <leader><leader>s <Plug>(easymotion-s)
+" Use <leader><leader>f{char} to find occurrences of {char} on the current line
+map <leader><leader>f <Plug>(easymotion-f)
+" Use <leader><leader>t{char} to find occurrences of {char} before the cursor on the current line
+map <leader><leader>t <Plug>(easymotion-t)
+" Use <leader><leader>w to find the beginning of words
+map <leader><leader>w <Plug>(easymotion-w)
+" Use <leader><leader>b to find the beginning of words backwards
+map <leader><leader>b <Plug>(easymotion-b)
+
+" Optional: Bidirectional motions (e.g., jump forward or backward with the same key)
+" map <leader><leader>W <Plug>(easymotion-bd-w) " jump to word (bidirectional)
+" map <leader><leader>L <Plug>(easymotion-bd-jk) " jump to line (bidirectional)
+
+" Optional: Enable specific motions like `2s` for searching in two lines
+" let g:EasyMotion_keys = 'asdflkjh' " Customize keys used for labels
+
+" --- End vim-easymotion Configuration ---
+
+" --- Rest of your custom configuration ---
+" (e.g., colorscheme, keybindings, options like set nu, set tabstop, etc.)
 set splitbelow
 set splitright
-set nu                      " Line Number
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 set encoding=utf-8
 set colorcolumn=80	    " Highlight column 80
 
 set t_Co=256                " enable 256 colors
-" You may also need to add:
-" set t_AB=^[[48;5;%dm
-" set t_AF=^[[38;5;%dm
-
-"split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
+" ...
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -83,23 +148,9 @@ au BufNewFile,BufRead Jenkinsfile
 " Additional SimpylFold config
 let g:SimpylFold_docstring_preview=1
 
-" Additional YouCompleteMe config
-" let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " Pretty code
 let python_highlight_all=1
 syntax on
-
-" Color Scheme config
-" if has('gui_running')
-"     set background=dark
-"     colorscheme solarized
-" else
-"     colorscheme zenburn
-" endif
-" Toggle color scheme
-" call togglebg#map("<F5>")
 
 "" Color
 colors slate
@@ -118,21 +169,22 @@ set smartcase                   " ... unless they contain a min 1 capital letter
 "" Viminfo; override how many lines of yanks to keep from default
 set viminfo='20,"1000,h
 
-"" Paste Mode On/Off 
-map <F2> :call Paste_on_off()<CR> 
-set pastetoggle=<F2> 
+"" Paste Mode On/Off
+map <F2> :call Paste_on_off()<CR>
+set pastetoggle=<F2>
 
-let paste_mode = 0 " 0 = normal, 1 = paste 
+let paste_mode = 0 " 0 = normal, 1 = paste
 
-func! Paste_on_off() 
-        if g:paste_mode == 0 
-                set paste 
-                let g:paste_mode = 1 
-        else 
-                set nopaste 
-                let g:paste_mode = 0 
-        endif   
-        return 
-endfunc 
+func! Paste_on_off()
+        if g:paste_mode == 0
+                set paste
+                let g:paste_mode = 1
+        else
+                set nopaste
+                let g:paste_mode = 0
+        endif
+        return
+endfunc
 
+" ...
 set clipboard=unnamed

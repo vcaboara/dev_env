@@ -12,8 +12,11 @@ Plug 'tpope/vim-fugitive'                 " Git Integration
 Plug 'tpope/vim-vinegar'                  " Project Drawer
 Plug 'valloric/youcompleteme'             " Code-completion
 Plug 'vim-airline/vim-airline'            " Status/tabline
-Plug 'vim-airline/vim-airline-themes'     " 
+Plug 'vim-airline/vim-airline-themes'     "
 Plug 'preservim/nerdtree'
+" Dictation support
+"Plug ''
+"Plug 'nvim-cmp'                  " Configurable completion plugin
 call plug#end()
 
 "autocmd VimEnter * if !argc() | NERDTree | endif
